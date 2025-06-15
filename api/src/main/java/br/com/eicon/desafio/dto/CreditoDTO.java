@@ -1,5 +1,6 @@
 package br.com.eicon.desafio.dto;
 
+import br.com.eicon.desafio.entity.Credito;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import lombok.Data;
@@ -27,7 +28,30 @@ public class CreditoDTO {
 
     private BigDecimal baseCalculo;
 
-    public CreditoDTO() {
+    public CreditoDTO1() {
 
+    }
+
+    public CreditoDTO1(Credito credito) {
+
+        numeroCredito = credito.getNumeroCredito();
+
+        numeroNfse = credito.getNumeroNfse();
+
+        dataConstituicao = credito.getDataConstituicao();
+
+        valorIssqn = credito.getValorIssqn();
+
+        tipoCredito = credito.getTipoCredito();
+
+        simplesNacional = credito.isSimplesNacional() ? "Sim" : "Nao";
+
+        aliquota = credito.getAliquota();
+
+        valorFaturado = credito.getValorFaturado();
+
+        valorDeducao = credito.getValorDeducao();
+
+        baseCalculo = credito.getBaseCalculo();
     }
 }
