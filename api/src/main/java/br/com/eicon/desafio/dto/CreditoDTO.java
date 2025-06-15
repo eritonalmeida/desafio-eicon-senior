@@ -28,11 +28,11 @@ public class CreditoDTO {
 
     private BigDecimal baseCalculo;
 
-    public CreditoDTO1() {
+    public CreditoDTO() {
 
     }
 
-    public CreditoDTO1(Credito credito) {
+    public CreditoDTO(Credito credito) {
 
         numeroCredito = credito.getNumeroCredito();
 
