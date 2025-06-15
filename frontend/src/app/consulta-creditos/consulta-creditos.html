@@ -1,0 +1,77 @@
+<mat-card class="card-with-margin" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Consulta de créditos NFS-e</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div style="width: 50%; float: left">
+      <section class="radio-section">
+        <mat-radio-group [(ngModel)]="tpBusca" (change)="handleRadio($event)">
+          <mat-radio-button [checked]="true" class="example-margin" value="numeroCredito">Por n.
+            crédito</mat-radio-button>
+          <mat-radio-button class="example-margin" value="numeroNfse">Por NFS-e</mat-radio-button>
+        </mat-radio-group>
+      </section>
+    </div>
+    <div style="width: 50%; float: left; text-align: right;">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Número" (keyup)="handleInput($event)">
+      </mat-form-field>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="numeroCredito">
+        <th mat-header-cell *matHeaderCellDef> N. crédito </th>
+        <td mat-cell *matCellDef="let element"> {{element.numeroCredito}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="numeroNfse">
+        <th mat-header-cell *matHeaderCellDef> N. NFS-e </th>
+        <td mat-cell *matCellDef="let element"> {{element.numeroNfse}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataConstituicao">
+        <th mat-header-cell *matHeaderCellDef> Dt. Constituição </th>
+        <td mat-cell *matCellDef="let element"> {{element.dataConstituicao | date: 'dd/MM/yyyy'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="valorIssqn">
+        <th mat-header-cell *matHeaderCellDef> Vl. ISSQN</th>
+        <td mat-cell *matCellDef="let element"> {{element.valorIssqn | currency : 'BRL'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tipoCredito">
+        <th mat-header-cell *matHeaderCellDef>Tp. crédito</th>
+        <td mat-cell *matCellDef="let element"> {{element.tipoCredito}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="simplesNacional">
+        <th mat-header-cell *matHeaderCellDef>Sim. Nacional</th>
+        <td mat-cell *matCellDef="let element"> {{element.simplesNacional}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="aliquota">
+        <th mat-header-cell *matHeaderCellDef>Alíquota</th>
+        <td mat-cell *matCellDef="let element"> {{element.aliquota}}%</td>
+      </ng-container>
+
+      <ng-container matColumnDef="valorFaturado">
+        <th mat-header-cell *matHeaderCellDef>Vl. Faturado</th>
+        <td mat-cell *matCellDef="let element"> {{element.valorFaturado | currency : 'BRL'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="valorDeducao">
+        <th mat-header-cell *matHeaderCellDef>Vl. Dedução</th>
+        <td mat-cell *matCellDef="let element"> {{element.valorDeducao | currency : 'BRL'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="baseCalculo">
+        <th mat-header-cell *matHeaderCellDef>B. Calculo</th>
+        <td mat-cell *matCellDef="let element"> {{element.baseCalculo | currency : 'BRL'}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
