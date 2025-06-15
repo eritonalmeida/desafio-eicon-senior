@@ -13,6 +13,12 @@ $ chmod 750 mvnw
 
 $ ./mvnw clean package -DskipTests
 
+$ cd ../frontend
+
+$ npm install
+
+$ npm run build
+
 $ cd ..
 
 $ docker-compose up -d --build
@@ -22,6 +28,9 @@ $ docker-compose up -d --build
 
 - Api: 
 [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html)
+
+- Front-end: 
+[http://localhost:8080](http://localhost:8080)
 
 ## Observação ##
 Para executar a api com kafka na IDE, é necessário adiconar a entrada abaixo no arquivo de hosts:

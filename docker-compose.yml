@@ -54,5 +54,12 @@ services:
     depends_on:
       - postgres
       - kafka
-
-      
+  
+  frontend:
+    build:
+      context: ./frontend
+    image: frontend:latest
+    ports:
+      - "8080:80"
+    depends_on:
+      - api-java
