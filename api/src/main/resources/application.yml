@@ -22,7 +22,7 @@ spring:
         baseline-on-migrate: true
         baseline-version: 0
     kafka:
-        bootstrap-servers: localhost:9092,host.docker.internal:9092
+        bootstrap-servers: localhost:9092
 topicos:
   creditos:
     request:
