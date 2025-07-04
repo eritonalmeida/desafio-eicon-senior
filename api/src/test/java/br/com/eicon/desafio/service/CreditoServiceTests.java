@@ -2,7 +2,7 @@ package br.com.eicon.desafio.service;
 
 import br.com.eicon.desafio.entity.Credito;
 import br.com.eicon.desafio.repository.CreditoRepository;
-import br.com.eicon.desafio.service.helper.TestHelper;
+import br.com.eicon.desafio.helper.TestHelper;
 import java.util.List;
 import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;

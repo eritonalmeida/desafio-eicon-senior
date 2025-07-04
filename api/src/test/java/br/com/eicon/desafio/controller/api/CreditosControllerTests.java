@@ -4,7 +4,7 @@ import br.com.eicon.desafio.dto.CreditoDTO;
 import br.com.eicon.desafio.entity.Credito;
 import br.com.eicon.desafio.service.CreditoService;
 import br.com.eicon.desafio.service.CreditosKafkaPublisher;
-import br.com.eicon.desafio.service.helper.TestHelper;
+import br.com.eicon.desafio.helper.TestHelper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.LocalDate;
 import java.time.Month;

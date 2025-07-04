@@ -1,4 +1,4 @@
-package br.com.eicon.desafio.service.helper;
+package br.com.eicon.desafio.helper;
 
 import br.com.eicon.desafio.entity.Credito;
 import java.math.BigDecimal;
