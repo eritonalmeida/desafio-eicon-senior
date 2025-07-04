@@ -55,4 +55,21 @@ public class CreditosControllerErrorTest {
         assertThat(credito).isNull();
 
     }
+    
+    @Test
+    void tesMethodOPTIONS() throws Exception {
+
+        String numeroCredito = "456";
+
+        String url = getUrl("/api/creditos/credito/" + numeroCredito);
+
+        ResponseEntity<CreditoDTO> response = restTemplate.exchange(url, HttpMethod.OPTIONS, new HttpEntity<>(""), CreditoDTO.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+
+        CreditoDTO credito = response.getBody();
+
+        assertThat(credito).isNull();
+
+    }
 }
